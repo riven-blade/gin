@@ -1,0 +1,7 @@
+user:
+  port: :8087
+  serviceName: localhost
+
+third:
+  port: :8088
+  serviceName: localhost

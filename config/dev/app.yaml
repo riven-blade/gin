@@ -1,0 +1,3 @@
+swagger: true
+address: :8086
+debug: false
