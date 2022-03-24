@@ -6,7 +6,6 @@ require (
 	github.com/erikdubbelboer/gspt v0.0.0-20210805194459-ce36a5128377
 	github.com/fsnotify/fsnotify v1.5.1
 	github.com/gin-contrib/sse v0.1.0
-	github.com/ddh-open/gin v1.7.7
 	github.com/go-playground/validator/v10 v10.10.1
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/go-sql-driver/mysql v1.6.0
