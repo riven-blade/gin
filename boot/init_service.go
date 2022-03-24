@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"github.com/ddh-open/gin/framework"
 	"github.com/ddh-open/gin/framework/contract"
-	"github.com/erikdubbelboer/gspt"
 	"log"
 	"net/http"
 	"os"
@@ -58,7 +57,6 @@ func InitService(container *framework.NiceContainer) error {
 		Handler: core,
 		Addr:    appAddress,
 	}
-	gspt.SetProcTitle("devops")
 	fmt.Println("app serve url:", appAddress)
 	if err := startAppServe(server, container); err != nil {
 		fmt.Println(err.Error())
