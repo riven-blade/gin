@@ -1,15 +1,6 @@
 package app
 
 import (
-	"github.com/ddh-open/gin/app/module/sys/api/domain"
-	"github.com/ddh-open/gin/app/module/sys/api/group"
-	"github.com/ddh-open/gin/app/module/sys/api/menu"
-	"github.com/ddh-open/gin/app/module/sys/api/path"
-	"github.com/ddh-open/gin/app/module/sys/api/role"
-	"github.com/ddh-open/gin/app/module/sys/api/user"
-	"github.com/ddh-open/gin/app/module/third/api/apm"
-	"github.com/ddh-open/gin/app/module/third/api/cls"
-	"github.com/ddh-open/gin/app/module/third/api/tencent"
 	"github.com/ddh-open/gin/app/swagger"
 	"github.com/ddh-open/gin/framework/contract"
 	"github.com/ddh-open/gin/framework/gin"
@@ -32,18 +23,4 @@ func Routes(r *gin.Engine) {
 	if configService.GetBool("app.swagger") == true {
 		r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	}
-
-	/** 系统相关  **/
-	domain.Register(r)
-	group.Register(r)
-	menu.Register(r)
-	path.Register(r)
-	role.Register(r)
-	// 用户模块注册路由
-	user.Register(r)
-
-	/** 第三方相关  **/
-	apm.Register(r)
-	cls.Register(r)
-	tencent.Register(r)
 }

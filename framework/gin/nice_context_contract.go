@@ -2,7 +2,6 @@ package gin
 
 import (
 	"github.com/ddh-open/gin/framework/contract"
-	"github.com/ddh-open/gin/resources/proto/userGrpc"
 )
 
 var userKey = "claims@user"
@@ -29,17 +28,4 @@ func (c *Context) MustMakeConfig() contract.Config {
 // MustMakeLog 从容器中获取日志服务
 func (c *Context) MustMakeLog() contract.Log {
 	return c.MustMake(contract.LogKey).(contract.Log)
-}
-
-// MustGetUser 获取user
-func (c *Context) MustGetUser() *userGrpc.BaseUserInfo {
-	return c.MustGet(userKey).(*userGrpc.BaseUserInfo)
-}
-
-// GetUser 获取user
-func (c *Context) GetUser() (*userGrpc.BaseUserInfo, bool) {
-	if user, ok := c.Get(userKey); ok {
-		return user.(*userGrpc.BaseUserInfo), ok
-	}
-	return nil, false
 }
